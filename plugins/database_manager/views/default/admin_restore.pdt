@@ -1,0 +1,56 @@
+<?php
+$this->Widget->clear();
+$this->Widget->create("Database Manager");
+
+$this->Form->create(null,
+    array(
+        "id" => "backup_upload",
+        "enctype" => "multipart/form-data"
+    ));
+
+print_r($errors);
+?>
+<div class="inner">
+    <table class="table">
+        <tbody>
+            <tr class="heading_row">
+                <td>Overview</td>
+            </tr>
+            <tr>
+                <td>Upload a previous database dump (currently only those ending in .sql will work) and choose your options.
+                Your database will then be restored to the best of Blesta's abilities.<br /><br />
+                
+                Please note that there are some limitations to this outside of Blesta or this plugin's control:
+                <ol>
+                    <li>There's no guarantee that the restore will be successful</li>
+                    <li>There is a chance of data loss in the database</li>
+                </ol>
+                
+                This plugin, Anzen Solutions and Blesta (plus any owners, employees, etc...) take no responsibilty for what occurs when
+                using this plugin.  While there should be no issues that arise from this plugin, we also want to make you fully aware of
+                potential conflicts that could arise.<br /><br />
+                
+                <strong>Overwrite file</strong> - If enabled (default), overwrite a previous uploaded backup of the same name.<br />
+                <strong>Purge non-essential tables</strong> - There are a list of tables that Blesta needs to keep operational.  Others (i.e.: ones created by plugins) can be dropped.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="pad">
+        <ul>
+            <li><?php $this->Form->fieldFile("file"); ?></li>
+            <li><?php $this->Form->fieldCheckbox("overwrite", null, true); ?> Overwrite file?</li>
+            <li><?php $this->Form->fieldCheckbox("purge"); ?> Purge non-essential tables?</li>
+        </ul>
+    </div>
+    <div class="button_row">
+        <a class="btn_right submit" href="#">Restore Database</a>
+        <a class="btn_right ajax" href="<?php echo $this->Html->safe(
+            $this->base_uri . "settings/company/plugins/manage/" . $this->Html->ifSet($plugin_id) . "/"
+        ); ?>">Cancel</a>
+    </div>
+</div>
+<?php
+$this->Form->end();
+$this->Widget->end();
+?>

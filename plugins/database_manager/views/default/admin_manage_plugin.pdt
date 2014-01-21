@@ -1,0 +1,59 @@
+<?php print_r($errors); ?>
+<?php
+$this->Widget->clear();
+$this->Widget->create("Database Manager");
+?>
+<div class="inner">
+    <table class="table">
+        <tbody>
+            <tr class="heading_row"><td>Overview</td></tr>
+            <tr><td>
+    This plugin is meant to provide a more advanced database management module than the simple backup solution
+    Blesta provides by default.<br /><br />
+    
+    Instead of uploading to a remote location and not being able to recover from a backup, just click "Restore Database" and
+    upload the backup file.  The database will be purged and restored with the values from the backup.<br /><br />
+    
+    Please note that while uploading the file is helpful, it may error out for whatever reason and cause data loss.  For this reason (and it is out of the control of this plugin),
+    it is recommended you still have console-level access to where Blesta is installed.
+            </td></tr>
+            <tr class="heading_row"><td>Features</td></tr>
+            <tr><td>
+            <strong>Backup Database</strong> - Same thing as going to [Settings]->[System]->[Backup]->[Download Backup].<br />
+            <strong>Rebuild Database</strong> - Creates a snapshot of the database as it stands right now and then rebuilds it from the snapshot, but only restores tables necessary to run the basic install of Blesta.<br />
+            <strong>Restore Database</strong> - Upload a previous backup of Blesta and it will restore from the backup.
+            </td></tr>
+        </tbody>
+    </table>
+    <div class="button_row">
+        <a class="btn_right" href="<?php echo $this->Html->safe($this->base_uri . "settings/company/plugins/manage/" . $this->Html->ifSet($plugin_id) . "/?action=restore"); ?>">Restore Database</a>
+        <a class="btn_right" href="<?php echo $this->Html->safe($this->base_uri . "settings/company/plugins/manage/" . $this->Html->ifSet($plugin_id) . "/?action=rebuild"); ?>">Rebuild Database</a>
+        <a class="btn_right" href="<?php echo $this->Html->safe($this->base_uri . "settings/company/plugins/manage/" . $this->Html->ifSet($plugin_id) . "/?action=backup"); ?>">Backup Database</a>
+    </div>
+    <!--
+    <table class="table">
+        <tbody>
+        <?php
+        /*$index = 3;
+        
+        foreach($res as $i=>$tbl){
+            if($index == 3){
+                echo "<tr>";
+            }
+            echo "<td>" . $tbl->tables_in_blesta . "</td>";
+            
+            if($index == 3){
+                echo "</tr>";
+                $index = 1;
+            } else{
+                $index += 1;
+            }
+        }*/
+        ?>
+        </tbody>
+    </table>
+    -->
+</div>
+<?php
+$this->Widget->end();
+?>

@@ -1,0 +1,11 @@
+{
+    "version": "0.0.1-a",
+    "name": "Database Manager",
+    "description": "Implements a more administrative tool for managing Blesta's database",
+    "authors": [
+        {
+            "name": "Anzen Solutions, LLC",
+            "url": "https://www.anzensolutions.com"
+        }
+    ]
+}
