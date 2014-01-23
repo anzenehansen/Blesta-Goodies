@@ -1,0 +1,60 @@
+<?php
+echo $errors;
+$this->Widget->clear();
+$this->Widget->create("LDAP Authentication");
+$this->Form->create();
+?>
+<div class="inner">
+<table class="table">
+<tbody><tr class="heading_row"><td>Overview</td></tr>
+<tr><td>This plugin, along with some slight modifications to the core files,
+allows you to authenticate users against LDAP.<br /><br />
+
+The goal for this is to make it possible to authenticate users against different
+sources besids MySQL.<br /><br />
+
+The base DN will be appended to each RDN.  Place %u wherever the username should be place.
+More advanced features will be made available later.</td></tr>
+</tbody>
+</table>
+<div class="pad">
+	<ul>
+		<li>
+			<?php $this->Form->label("Basse DN (i.e.: dc=example,dc=com)", "basedn"); ?>
+			<?php $this->Form->fieldText("basedn", null, array("id" => "basedn")); ?>
+		</li>
+		<li>
+			<?php $this->Form->label("Staff RDN (i.e.: cn=%u,ou=Staff,o=IT)", "staffdn"); ?>
+			<?php $this->Form->fieldText("staffdn", null, array("id" => "staffdn")); ?>
+		</li>
+		<li>
+			<?php $this->Form->label("Client RDN", "clientdn"); ?>
+			<?php $this->Form->fieldText("clientdn", null, array("id" => "clientdn")); ?>
+		</li>
+		<li>
+				<?php $this->Form->label("Company", "company"); ?>
+				<?php $this->Form->fieldSelect("company", $companies, null, array("id" => "company")); ?>
+			</li>
+		<li>
+				<?php $this->Form->label("LDAP Server", "host"); ?>
+				<?php $this->Form->fieldText("host", null, array("id" => "host")); ?>
+		</li>
+		<li>
+				<?php $this->Form->label("LDAP Server Port", "port"); ?>
+				<?php $this->Form->fieldText("port", null, array("id" => "port")); ?>
+		</li>
+		<li>
+				<?php $this->Form->label("SSL Connection", "ssl"); ?>
+				<?php $this->Form->fieldCheckbox("ssl", null, true, array("id" => "ssl")); ?>
+		</li>
+		</ul>
+	</div>
+
+		<div class="button_row">
+			<a class="btn_right submit" href="#">Submit</a>
+		</div>
+</div>
+		<?php
+		$this->Form->end();
+		$this->Widget->end();
+		?>

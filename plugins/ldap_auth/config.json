@@ -1,0 +1,11 @@
+{
+    "version": "0.0.1-a",
+    "name": "LDAP Authentication",
+    "description": "Allows authentication against LDAP protocol",
+    "authors": [
+        {
+            "name": "Anzen Solutions, LLC",
+            "url": "https://www.anzensolutions.com"
+        }
+    ]
+}
