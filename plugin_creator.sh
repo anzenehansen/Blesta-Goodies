@@ -19,6 +19,21 @@ done
 # Empty config file
 touch plugins/$PLUGIN/config.json
 
+# Skeleton config file
+
+echo "{
+    "version": "0.0.1",
+    "name": "",
+    "description": "",
+    "authors": [
+        {
+            "name" : "",
+            "url": ""
+        }
+    ]
+}
+" > plugins/$PLUGIN/config.json
+
 # Base plugin class that gets loaded into Blesta
 echo "<?php
 class ${PLUGIN}Plugin extends Plugin {
