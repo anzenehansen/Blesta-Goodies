@@ -112,7 +112,7 @@ class BlestaAPI(object):
         return self.req()
     
     def req(self):
-        from base64 import encodestring
+        from base64 import encodestring as es
         
         url = "/%s%s/%s.%s" % (self.uri, self.model, self.method, self.fmt)
         self.last_req = {'url' : url, 'args' : self.args}
