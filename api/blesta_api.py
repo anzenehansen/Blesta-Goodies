@@ -129,7 +129,7 @@ class BlestaAPI(object):
         elif self.port == "https":
             ws = httplib.HTTPSConnection(self.host)
         else:
-            raise Exception("Protol '%s' unknown or unsupported." % (port))
+            raise Exception("Protocol '%s' unknown or unsupported." % (port))
         
         auth = es('%s:%s' % (self.user, self.pasw)).replace('\n', '')
         
