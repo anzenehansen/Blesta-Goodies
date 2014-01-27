@@ -70,10 +70,6 @@ Currently only works by calling .get()/post()/put()/delete() methods.
 class BlestaAPI(object):
     
     def __init__(self, url, user, pasw):
-        """
-        >>> a = BlestaAPI("http://www.anzensolutions.com/accounts/api/", "test", "f16650a3290f1cf92a7903b5cff2e36c")
-        >>> a.post("encryption", "systemEncrypt", {'value' : "data"})
-        """
         self.port,self.url = url.split("://")
         self.user = user
         self.pasw = pasw
