@@ -1,0 +1,11 @@
+{
+    "version": "1.0.0",
+    "name": "API Helper",
+    "description": "Provides extended functionality and use to Blesta's API.",
+    "authors": [
+        {
+            "name": "Anzen Solutions, LLC",
+            "url": "https://www.anzensolutions.com"
+        }
+    ]
+}
