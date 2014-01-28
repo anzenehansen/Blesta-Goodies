@@ -37,7 +37,9 @@ The response structure varies on the ```type``` passed.
 
 Loops through each of the classes in ```/blesta/app/models/``` and stores them.  Calls for this look like:
 
-```/blesta/api/Navigation/getCompany.json```
+```
+/blesta/api/Navigation/getCompany.json
+```
 
 ### Plugins
 
@@ -47,8 +49,14 @@ Loops through each of the classes in ```/blesta/app/models/``` and stores them. 
 
 This is broken down to include every plugin name, then its model and the methods callable from it.  This is because to call plugins the API call looks like this:
 
-```/blesta/api/plugin.model/method.fmt```
+```
+/blesta/api/plugin.model/method.fmt
+```
 
-So, for this sample, it would be ```/blesta/api/download_manager.DownloadManagerCategories/get.json```.
+So, for this sample, it would be
+
+```
+/blesta/api/download_manager.DownloadManagerCategories/get.json
+```.
 
 This goes for all plugins.
