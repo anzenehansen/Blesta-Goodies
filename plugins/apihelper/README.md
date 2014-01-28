@@ -27,8 +27,8 @@ If no ```type``` is passed it will return all available calls from itself
 
 The response structure varies on the ```type``` passed.
 
-Models
-+++++++
+### Models
+
 ```python
 [{"Navigation":["getPrimary","getPrimaryClient","getCompany","getSystem","getSearchOptions","getPluginNav"]},{"Countries": ["getList","get","add","edit","delete"]}, ...]
 ```
@@ -37,8 +37,8 @@ Loops through each of the classes in ```/blesta/app/models/``` and stores them. 
 
 ```/blesta/api/Navigation/getCompany.json```
 
-Plugins
-++++++++
+### Plugins
+
 ```python
 {"download_manager":[{"DownloadManagerCategories":["add","edit","delete","get","getAll"]}, ...], ...
 ```
