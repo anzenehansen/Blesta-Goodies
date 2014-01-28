@@ -9,7 +9,9 @@ Testing API Ability
 
 Simply make the API call:
 
-```/blesta/api/Apihelper.method_list/test.json?str=hello%20world```
+```
+/blesta/api/Apihelper.method_list/test.json?str=hello%20world
+```
 
 If everything goes well, you should receive the same string back.
 
