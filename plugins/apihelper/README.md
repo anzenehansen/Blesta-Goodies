@@ -44,7 +44,7 @@ Loops through each of the classes in ```/blesta/app/models/``` and stores them. 
 ### Plugins
 
 ```python
-{"download_manager":[{"DownloadManagerCategories":["add","edit","delete","get","getAll"]}, ...], ...
+{"download_manager":[{"DownloadManagerCategories":["add","edit","delete","get","getAll"]}, ...], ...}
 ```
 
 This is broken down to include every plugin name, then its model and the methods callable from it.  This is because to call plugins the API call looks like this:
@@ -57,6 +57,6 @@ So, for this sample, it would be
 
 ```
 /blesta/api/download_manager.DownloadManagerCategories/get.json
-```.
+```
 
 This goes for all plugins.
