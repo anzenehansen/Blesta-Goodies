@@ -4,6 +4,11 @@ class MethodList extends ApihelperModel {
      * Plugins can have API methods as well so we need to load those.
      **/
     private function get_plugins($dir = PLUGINDIR){
+        Loader::loadComponents($this, array("Record"));
+        
+        // Get all plugins installed for this specific company
+        $installed_plugins = $this->Record->select("dir")->from("plugins")->where("company_id", "=", Configure::get("Blesta.company_id"))->fetchAll();
+        
         $plugins = array();
         
         // As long as we have a plugin directory to open, lets do it!
@@ -11,6 +16,20 @@ class MethodList extends ApihelperModel {
             while(($folder = readdir($pdir)) !== false){
                 // Ignore ".", ".." and hidden files
                 if($folder[0] != "." && is_dir($dir . DS . $folder)){
+                    // Switch on if plugin was found as installed or not
+                    $found = false;
+                    
+                    // Loop through each one, if not installed we go to the next plugin
+                    foreach($installed_plugins as $installed){
+                        if($installed->dir == $folder){
+                            $found = true;
+                            break;
+                        }
+                    }
+                    
+                    if(!$found)
+                        continue;
+                    
                     // Remove double directory seprators
                     $path = str_replace(DS . DS, DS, $dir . DS . $folder);
                     
