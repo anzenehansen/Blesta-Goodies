@@ -10,20 +10,7 @@ Original: https://github.com/phillipsdata/blesta_sdk/tree/master/api
 Acts the same as the original.
 
 ## TODO:
-#* Fix API plugin to return plugins properly:
-
-{"plugin_name" : [{"method_file_1" : [func1, func2, ...], ...}, ...]}
-
-Right now it returns:
-
-'apihelper': [{'MethodList': ['fetch', 'test']}]
-
-Should return:
-
-'Apihelper': [{'method_list': ['fetch', 'test]}]
-
-'Apihelper' - Get the classname and get every part before last "_"
-'method_list' - Get the filename of the model to parse
+#* Make it so API calls can determin the HTTP type to use (POST/GET/etc...)
 """
 
 from json import loads as load
