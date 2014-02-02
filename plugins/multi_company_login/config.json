@@ -1,0 +1,11 @@
+{
+    "version": "1.0.0",
+    "name": "Multi-Company Login",
+    "description": "Allows clients to login and manage their profile for multiple companies.",
+    "authors": [
+        {
+            "name": "Anzen Solutions, LLC",
+            "url": "https://www.anzensolutions.com"
+        }
+    ]
+}
